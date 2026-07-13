@@ -2,8 +2,7 @@ class Solution {
     public int[] pivotArray(int[] nums, int pivot) {
       int n = nums.length;
       int[] result = new int[n];
-      int countSmallerOrEqual = 0;
-      int countOrequal = 0;
+      int countSmallerOrEqual = 0,countOrequal = 0;
         for (int i = 0; i < n; i++) {
             if (nums[i] < pivot) countSmallerOrEqual++;
             else if(nums[i] == pivot) countOrequal++;
