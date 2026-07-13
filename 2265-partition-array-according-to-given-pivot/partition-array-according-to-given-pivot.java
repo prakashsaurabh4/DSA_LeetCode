@@ -14,8 +14,10 @@ class Solution {
         int larger = countSmallerOrEqual + countOrequal; 
         for(int i = 0;i < n;i++){
         if(nums[i] < pivot){
-            result[smaller] = nums[i];
-            smaller++;
+            result[smaller++] = nums[i];
+            // Also we can write
+            // result[smaller] = nums[i];
+            // smaller++;
         }
         else if(nums[i] == pivot){
             result[equal++] = nums[i];
