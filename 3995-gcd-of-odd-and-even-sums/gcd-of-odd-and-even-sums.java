@@ -4,7 +4,12 @@ class Solution {
     int evensum = n * (2*2 + (n-1)*2)/2;
     return gcd(oddsum, evensum);
     }
-    private int gcd(int a, int b) {
-        return b == 0 ? a : gcd(b, a % b);
+     private int gcd(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
     }
 }
