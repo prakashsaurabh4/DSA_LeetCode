@@ -5,8 +5,7 @@ class Solution {
      freq[ch - 'a']++;   
      }
      Arrays.sort(freq);
-     int idx=0;
-     int ans=0;
+     int idx=0,ans=0;
      for(int i=25;i>=0;i--){
         if(freq[i]==0) continue;
         ans += freq[i] * ((idx/8) + 1);
