@@ -1,3 +1,46 @@
+//Add Efficient approach
+// class MyQueue {
+//     Stack<Integer> st = new Stack<>();
+//     Stack<Integer> helper = new Stack<>();
+//     public MyQueue() {
+        
+//     }
+    
+//     public void push(int x) { //0(1)
+//         st.push(x);
+//     }
+    
+//     public int pop() { //0(n)
+//         // remove bottom from stack
+//         while(st.size()>1){
+//             helper.push(st.pop());
+//         }
+//         int front = st.pop();
+//         while(helper.size()>0){
+//             st.push(helper.pop());
+//         }
+//         return front;
+//     }
+    
+//     public int peek() {  // 0(n)
+//         //print bottom from stack
+//          while(st.size()>1){
+//             helper.push(st.pop());
+//         }
+//         int front = st.peek();
+//         while(helper.size()>0){
+//             st.push(helper.pop());
+//         }
+//         return front;
+//      }
+    
+//     public boolean empty() {
+//         return (st.size()==0);
+//     }
+// }
+
+
+//pop Efficient approach
 class MyQueue {
     Stack<Integer> st = new Stack<>();
     Stack<Integer> helper = new Stack<>();
@@ -5,32 +48,23 @@ class MyQueue {
         
     }
     
-    public void push(int x) {
+    public void push(int x) { //0(1)
+        //push at bottom
+        while(st.size()>0){
+            helper.push(st.pop());
+        }
         st.push(x);
-    }
-    
-    public int pop() {
-        // remove bottom from stack
-        while(st.size()>1){
-            helper.push(st.pop());
-        }
-        int front = st.pop();
         while(helper.size()>0){
             st.push(helper.pop());
         }
-        return front;
     }
     
-    public int peek() {
-        //print bottom from stack
-         while(st.size()>1){
-            helper.push(st.pop());
-        }
-        int front = st.peek();
-        while(helper.size()>0){
-            st.push(helper.pop());
-        }
-        return front;
+    public int pop() { //0(1)
+        return st.pop();
+    }
+    
+    public int peek() {  // 0(1)
+        return st.peek();
      }
     
     public boolean empty() {
