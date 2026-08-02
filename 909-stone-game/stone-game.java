@@ -1,9 +1,7 @@
 class Solution {
     Integer[][] dp;
     public boolean stoneGame(int[] piles) {
-      int n = piles.length;
-      dp = new Integer[n][n];
-      int total = 0;
+      int n = piles.length,total = 0;dp = new Integer[n][n];
       for(int x : piles) total +=x;
       int Alice = solve(piles,0,n-1);
       int Bob = total - Alice;
