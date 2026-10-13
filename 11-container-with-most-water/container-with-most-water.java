@@ -1,4 +1,4 @@
-class Solution {
+class Solution { // TC 0(n) SC (1)
     public int maxArea(int[] height) {
      int n = height.length;
      int maxArea = 0;   
