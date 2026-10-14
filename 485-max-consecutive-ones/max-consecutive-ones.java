@@ -4,8 +4,7 @@ class Solution {
         int currentCount = 0;
         int maxCount = 0;
         
-        int j = 0;
-        while(j<n){
+         for(int j=0;j<n;j++){
             if(nums[j]==1){
                 currentCount++;
             }
@@ -13,9 +12,7 @@ class Solution {
                 maxCount = Math.max(maxCount,currentCount);
                 currentCount = 0;
             }
-            j++;
         }
-        maxCount = Math.max(maxCount,currentCount);
-        return maxCount;
-    }
+        return  Math.max(maxCount,currentCount);
+    }   
 }
