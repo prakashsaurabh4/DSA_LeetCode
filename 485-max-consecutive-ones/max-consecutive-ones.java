@@ -1,4 +1,4 @@
-class Solution {
+class Solution { // TC 0(n) SC (1)
     public int findMaxConsecutiveOnes(int[] nums) {
         int n = nums.length;
         int currentCount = 0;
