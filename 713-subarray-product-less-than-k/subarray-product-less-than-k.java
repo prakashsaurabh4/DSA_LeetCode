@@ -1,4 +1,4 @@
-class Solution {
+class Solution { // Not optimize solution
     public int numSubarrayProductLessThanK(int[] nums, int k) {
         int count = 0, n = nums.length;
         for(int i=0;i<n;i++){
