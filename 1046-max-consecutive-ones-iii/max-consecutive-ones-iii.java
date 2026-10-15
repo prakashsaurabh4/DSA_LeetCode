@@ -1,4 +1,4 @@
-class Solution {
+class Solution { // TC 0(n) SC (1)
     public int longestOnes(int[] nums, int k) {
         int n = nums.length;
         int left = 0;
