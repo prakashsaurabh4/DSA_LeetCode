@@ -1,4 +1,4 @@
-class Solution { // TC 0(2n)or 0(4n) =>0(n) SC (1)
+class Solution { // TC 0(2n)or 0(4n) =>0(n) SC (k)
     public int subarraysWithKDistinct(int[] nums, int k) {
         return atMost(nums,k) - atMost(nums,k-1);
     }
