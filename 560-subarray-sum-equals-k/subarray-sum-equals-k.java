@@ -1,4 +1,4 @@
-class Solution {  // TC 0(n^2) SC 0(1)
+class Solution {  // TC 0(n) SC 0(1)
     public int subarraySum(int[] nums, int k) {
         int n = nums.length, count = 0;
         int prefixSum = 0;
