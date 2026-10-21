@@ -1,4 +1,4 @@
-class Solution { // O(mn(2k+1)^2) 0(mn)
+class Solution { // TC O(mn)   SC 0(mn)
     public int[][] matrixBlockSum(int[][] mat, int k) {
         int m = mat.length, n = mat[0].length;
         int[][] prefix = new int[m+1][n+1];
