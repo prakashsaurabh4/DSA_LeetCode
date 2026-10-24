@@ -1,24 +1,19 @@
-class Solution {
+class Solution { //TC 0(n) SC(1)
     public int maxProduct(int[] nums) {
         int n = nums.length;
-        int leftProduct = 1;
-        int rightProduct = 1;
-        int ans = nums[0];
-        for (int i = 0; i < n; i++) {
-            // leftProduct = leftProduct == 0 ? 1 : leftProduct;
-            // rightProduct = rightProduct == 0 ? 1 : rightProduct;
-            if (leftProduct == 0) {
-                leftProduct = 1;
-            }
+        int maxProd = Integer.MIN_VALUE;
+        int leftProd = 1, rightProd = 1;
+        for(int i=0;i<n;i++){
+            if(leftProd == 0) leftProd = 1;
+            if(rightProd == 0) rightProd = 1;
 
-            if (rightProduct == 0) {
-                rightProduct = 1;
-            }
+            leftProd *= nums[i];
+            rightProd *= nums[n-1-i];
 
-            leftProduct *= nums[i];
-            rightProduct *= nums[n - 1 - i];
-            ans = Math.max(ans, Math.max(leftProduct, rightProduct));
+            maxProd = Math.max(maxProd,Math.max(rightProd,leftProd));
+
+            
         }
-        return ans;
+        return maxProd;
     }
 }
