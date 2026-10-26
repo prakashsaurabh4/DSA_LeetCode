@@ -1,4 +1,4 @@
-class Solution {
+class Solution {  // TC 0(n) SC 0(1)
     public int maxSubarraySumCircular(int[] nums) {
        int n = nums.length;
         int totalSum = 0;
