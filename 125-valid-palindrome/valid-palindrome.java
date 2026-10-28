@@ -1,4 +1,4 @@
-class Solution {
+class Solution { // TC 0(n) SC 0(1)
     public boolean isPalindrome(String s) {
         int left = 0, right = s.length()-1;
         while(left < right){
