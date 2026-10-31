@@ -1,24 +1,20 @@
-class Solution { //TC 0(n^3) SC 0(1)
-    private boolean isPalindrome(String s, int left, int right) {
-        while (left < right) {
-            if (s.charAt(left) != s.charAt(right)) {
-                return false;
-            }
-            left++;
-            right--;
-        }
-        return true;
+class Solution { // TC 0(n^2) SC 0(1)
+    private int expand(String s, int left, int right) {
+        int count = 0;
+        while(left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)){
+            count++;
+            left--;
+            right++;
+       }
+       return count;
     }
 
     public int countSubstrings(String s) {
         int n = s.length();
         int count = 0;
         for(int i=0;i<n;i++){
-            for(int j=i;j<n;j++){
-                if(isPalindrome(s,i,j)){
-                    count++;
-                }
-            }
+            count += expand(s, i, i); //odd length
+            count += expand(s, i, i+1); //even length
         }
         return count;
     }
